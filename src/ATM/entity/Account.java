@@ -153,22 +153,22 @@ public class Account implements Serializable {
                 '}';
     }
 
-//    @Override
-//    /**
-//     * equals() mặc định chỉ so sánh xem các obj có nằm cùng 1 ô nhớ ko
-//     * nên khi dùng equals() mặc định sẽ gây sai
-//     * => Khi đó ta override lại pthuc equals() để cho Java hiểu đc là "nếu 2 tk nếu cùng accountNumber thì đc coi là = nhau"!
-//     **/
-//    public boolean equals(Object obj) {
-//        if (this == obj) return true;
-//        if (obj == null || getClass() != obj.getClass()) return false;
-//
-//        Account account = (Account) obj;
-//        return accountNumber != null ? accountNumber.equals(account.accountNumber) : account.accountNumber == null;
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return accountNumber != null ? accountNumber.hashCode() : 0;
-//    }
+    @Override
+    /**
+     * equals() mặc định chỉ so sánh xem các obj có nằm cùng 1 ô nhớ ko
+     * nên khi dùng equals() mặc định sẽ gây sai
+     * => Khi đó ta override lại pthuc equals() để cho Java hiểu đc là "nếu 2 tk nếu cùng accountNumber thì đc coi là = nhau"!
+     **/
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Account account = (Account) obj;
+        return accountNumber != null ? accountNumber.equals(account.accountNumber) : account.accountNumber == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return accountNumber != null ? accountNumber.hashCode() : 0;
+    }
 }
